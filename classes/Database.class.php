@@ -3,7 +3,6 @@
 class Database {
 
   protected function connect() {
-    var_dump($_ENV);
     $host = $_ENV['CLEARDB_DATABASE_HOST'] ?: 'localhost';
     $user = $_ENV['CLEARDB_DATABASE_USERNAME'] ?: 'root';
     $pwd = $_ENV['CLEARDB_DATABASE_PASSWORD'] ?: '';
