@@ -4,8 +4,8 @@
     <ul>
       <li><a href="index.php">Home</a></li>
       <li><a href="users.php">Użytkownicy</a></li>
-      <li><a href="">Top 10</a></li>
-      <li><a href="">Szukaj</a></li>
+<!--       <li><a href="">Top 10</a></li>
+      <li><a href="">Szukaj</a></li> -->
       <li><a href="index.php#chat">Chat</a></li>
     </ul>
   </div>
@@ -16,7 +16,7 @@
         echo '<li><a href="index.php" class="main">' . $_SESSION['username'] . '</a></li>';
         echo '<li><a href="logout.php">Wyloguj się</a></li>';
       } else {
-        echo '<li><a href="register.php">Zarejestruj się</a></li>';
+        echo '<li><a href="register.php" class="main" style="font-weight: bold;">Zarejestruj się</a></li>';
         echo '<li><a href="login.php">Zaloguj się</a></li>';
       }
       ?>

@@ -1,5 +1,7 @@
 <?php
-if (isset($_POST['method']) === true && empty($_POST['method']) === false) {
+if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) === false && 
+    strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest' &&
+    isset($_POST['method']) === true && empty($_POST['method']) === false) {
   require_once 'includes/autoLoaderClass.inc.php';
 
   $chatContr = new chatController();
