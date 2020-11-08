@@ -10,6 +10,8 @@
       $dsn = 'mysql:host=' . $host . ';dbname=' . $dbName . ';port=3306';
       $pdo = new PDO($dsn, $user, $pwd);
       $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+      $r = $pdo->query('SELECT * FROM users;');
+      var_dump($r);
       echo 'success';
     } catch (PDOException $e) {
       echo 'Connection failed: ' . $e->getMessage();
