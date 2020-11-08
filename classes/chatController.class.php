@@ -43,7 +43,6 @@ class ChatController extends Chat {
     $result = $this->getLastMessages();
     $return_data['success'] = true;
     $return_data['data'] = $result;
-    var_dump($return_data);
     return $return_data;
   }
 

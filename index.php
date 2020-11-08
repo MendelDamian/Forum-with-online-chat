@@ -1,22 +1,15 @@
-<!-- <?php //require_once 'includes/baseTopSite.inc.php'; ?>
+<?php //require_once 'includes/baseTopSite.inc.php'; ?>
 <?php //require_once 'includes/parts/chat.part.php'; ?>
-<?php //require_once 'includes/baseBottomSite.inc.php'; ?>
- -->
- <?php
+<?php //require_once 'includes/baseBottomSite.inc.php';
 
-echo $_ENV['CLEARDB_DATABASE_USERNAME'];
+$host = getenv('CLEARDB_DATABASE_HOST') ?: 'localhost';
+$user = getenv('CLEARDB_DATABASE_USERNAME') ?: 'root';
+$pwd = getenv('CLEARDB_DATABASE_PASSWORD') ?: '';
+$dbName = getenv('CLEARDB_DATABASE_DATABASE') ?: 'Forum';
 
-$host = $_ENV['CLEARDB_DATABASE_HOST'];
-$user = $_ENV['CLEARDB_DATABASE_USERNAME'];
-$pwd = $_ENV['CLEARDB_DATABASE_PASSWORD'];
-$dbName = $_ENV['CLEARDB_DATABASE_DATABASE'];
+$dsn = 'mysql:host=' . $host . ';dbname=' . $dbName;
 
-try {
-  $dsn = 'mysql:host=' . $host . ';dbname=' . $dbName;
-  $dbh = new PDO($dsn, $user, $password);
-  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  echo 'Connection failed: ' . $e->getMessage();
-}
+var_dump($dsn);
+$pdo = new PDO($dsn, $user, $pwd);
 
  ?>
