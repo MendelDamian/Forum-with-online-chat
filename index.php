@@ -12,6 +12,7 @@ $pwd = $_ENV['CLEARDB_DATABASE_PASSWORD'];
 $dbName = $_ENV['CLEARDB_DATABASE_DATABASE'];
 
 try {
+  $dsn = 'mysql:host=' . $host . ';dbname=' . $dbName;
   $dbh = new PDO($dsn, $user, $password);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
