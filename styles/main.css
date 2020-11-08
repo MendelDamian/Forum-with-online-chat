@@ -1,0 +1,308 @@
+/* VARIABLES */
+:root {
+  --background-color: #0d0d0d;
+  --dark: #121414;
+  --very-dark: #0e0f0f;
+  --main: #ffb301;
+  --gray: #e8e6e3;
+  --dark-gray: #313134;
+  --text: #b9b3aa;
+  --black: #0e0f0f;
+  --white: #f7f7f7;
+}
+
+/* TAGS */
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana, sans-serif;
+  color: var(--text); 
+  font-size: 14px;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 60px;
+  background-color: black;
+  border-bottom: 1px solid var(--text);
+}
+
+header .left {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+header .right{
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+img.logo {
+  height: 48px;
+  width: auto;
+  margin: 7px 11px;
+  float: left;
+}
+
+header ul {
+  list-style: none;
+}
+
+header ul li {
+  float: left;
+  padding: 20px 10px;
+  line-height: 20px;
+}
+
+header ul li a {
+  font-size: 13px;
+}
+
+header ul li a:hover {
+  color: var(--white);
+  transition: .2s;
+}
+
+header .left ul li:first-child a {
+  color: var(--white);
+}
+
+header .left ul li:first-child {
+  margin-left: 5%;
+}
+
+header .right ul {
+  float: right;
+}
+
+.main {
+  color: var(--main);
+}
+
+body .container {
+  clear: both;
+  margin: 0 auto;
+  width: 66%;
+  height: calc(100% - 62px);
+  padding: 40px 0;
+  position: relative;
+}
+
+#chat {
+  width: 100%;
+  background-color: var(--dark);
+} 
+
+#chat #message-box {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 350px;
+  width: 100%;
+  background-color: var(--very-dark);
+}
+
+#chat .header {
+  padding: 10px;
+}
+
+#chat .header span.title, #chat div.your-message span {
+  margin-left: 30px;
+}
+
+#message-box .message {
+  height: auto;
+  border-bottom: 1px solid black;
+  clear: both;
+}
+
+#message-box .message * {
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+#message-box .message .avatar {
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  float: left;
+  display: inline-block;
+  padding: 7px;
+}
+
+.msg-meta {
+  margin-top: 5px;
+}
+
+.msg-meta, .msg-content {
+  width: 90%;
+}
+
+.msg-content p {
+  color: var(--white);
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+
+#message-box .message .left {
+  width: 50px;
+  min-height: 50px;
+  float: left;
+}
+
+#message-box .message .right {
+  float: left;
+  width: calc(100% - 50px);
+  min-height: 50px;
+}
+
+#chat div.your-message {
+  padding: 10px;
+}
+
+div.auth {
+  height: 100%;
+  display: flex;
+}
+
+form.auth {
+  margin: auto;
+  border: 2px solid var(--main);
+  padding: 5vh 5vw;
+  border-radius: 50px;
+}
+
+form.auth input:not([type=submit]):not([type=email]):not([type=checkbox]) {
+  background: none;
+  border: none;
+  width: 380px;
+  padding: 10px;
+  margin: 5px;
+  border-bottom: 1px solid var(--text);
+}
+
+form.auth input:not([type=submit]):not([type=email]):not([type=checkbox]):focus {
+  border-bottom: 1px solid var(--main);
+  transition: .5s;
+}
+
+form.auth input {
+  float:left;
+  clear:both;
+}
+
+form.auth .button {
+  width: 380px;
+  margin: 20px 5px 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  font-size: 12px;
+}
+
+form.auth h1 {
+  letter-spacing: 5px;
+  font-size: 250%;
+}
+
+form.auth p.links, form.auth h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form p.links a {
+  font-size: 12px;
+}
+
+.button {
+  padding: 10px;
+  border: 1px solid var(--text);
+  background: none;
+  font-weight: bold;
+  color: var(--main);
+  border: 1px solid var(--text);
+  border-radius: 2px;
+}
+
+.button:hover {
+  cursor: pointer;
+  border-color: var(--main);
+  transition: 0.5s;
+}
+
+.errorBox {
+  position: absolute;
+  padding: 15px 30px;
+  max-width: 500px;
+  border: 2px solid darkred;
+  border-radius: 50px;
+  transform: translate(-50%, 0%);
+  top: 100px;
+  left: 50%;
+  text-align: center;
+  font-weight: 200;
+  font-size: 18px;
+  z-index: 9999;
+}
+
+#message-form {
+  position: relative;
+}
+
+#message-form input {
+  background-color: var(--dark-gray);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+}
+
+#message-form input:focus {
+  color: var(--white);
+  transition: 0.5s;
+}
+
+#message-form button {
+  background: none;
+  border: none;
+  color: var(--main);
+  font-size: 1.5em;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: -7px;
+  padding: 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+footer * {
+  font-size: 10px;
+  font-weight: bold;
+}
