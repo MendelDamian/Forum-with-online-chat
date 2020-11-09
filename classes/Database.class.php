@@ -2,7 +2,7 @@
 
 class Database {
 
-  protected function connect() {
+  public function connect() {
     $host = getenv('CLEARDB_DATABASE_HOST') ?: 'localhost';
     $user = getenv('CLEARDB_DATABASE_USERNAME') ?: 'root';
     $pwd = getenv('CLEARDB_DATABASE_PASSWORD') ?: '';
