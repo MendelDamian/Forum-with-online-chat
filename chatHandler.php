@@ -11,6 +11,18 @@ if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) === false &&
   $chatView = new ChatView();
 
   var_dump('dziala chathandler');
+  if ($_POST['method'] === 'fetch') {
+    var_dump('weszlo fetch if');
+    $messages = $chatContr->receiveMessages();
+    var_dump($messages);
+    if ($messages['success'] === true) {
+      $chatView->fetchMessages($messages['data']);
+    } else {
+      echo 'Coś poszło nie tak if';
+    }
+  }
+  exit;
+
   switch($_POST['method']) {
     case 'fetch':
       var_dump('weszlo fetch');
