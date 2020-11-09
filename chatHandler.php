@@ -10,7 +10,7 @@ if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) === false &&
   $chatContr = new chatController();
   $chatView = new ChatView();
 
-  var_dump('dziala chathandler');
+  var_dump('dziala chathandler', $_POST['method'] === 'fetch');
   if ($_POST['method'] === 'fetch') {
     var_dump('weszlo fetch if');
     $messages = $chatContr->receiveMessages();
