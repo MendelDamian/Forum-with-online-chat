@@ -13,6 +13,7 @@ if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) === false &&
   var_dump('dziala chathandler');
   switch($_POST['method']) {
     case 'fetch':
+      var_dump('weszlo fetch');
       $messages = $chatContr->receiveMessages();
       var_dump($messages);
       if ($messages['success'] === true) {
@@ -23,6 +24,7 @@ if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) === false &&
       break;
 
     case 'send':
+      var_dump('weszlo send');
       if (isset($_POST['content']) === true) {
         $chatContr->sendMessage($_POST['content']);
       }
