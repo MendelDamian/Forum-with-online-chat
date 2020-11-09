@@ -9,6 +9,7 @@ if (isset($_SESSION['user_id']) === true && isset($_SESSION['username']) === tru
 if (isset($_POST['submit']) === true) {
   var_dump('weszlo');
   $userContr = new UserController();
+  var_dump('utworzyl sie');
   $results = $userContr->loginUser($_POST['username'], $_POST['password']);
   var_dump('przeszlo', $results);
 
