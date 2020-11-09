@@ -3,10 +3,11 @@
 class Database {
 
   protected function connect() {
-    $host = getenv('CLEARDB_DATABASE_HOST') ?: 'localhost';
-    $user = getenv('CLEARDB_DATABASE_USERNAME') ?: 'root';
-    $pwd = getenv('CLEARDB_DATABASE_PASSWORD') ?: '';
-    $dbName = getenv('CLEARDB_DATABASE_DATABASE') ?: 'Forum';
+    // It's okay to contain these informations here because it's only for local purposes
+    $host = 'localhost';
+    $user = 'root';
+    $pwd = '';
+    $dbName = 'Forum';
     try {
       $dsn = 'mysql:host=' . $host . ';dbname=' . $dbName . ';port=3306';
       $pdo = new PDO($dsn, $user, $pwd);
