@@ -1,14 +1,12 @@
-<?php require_once 'includes/baseTopSite.inc.php'; ?>
+<?php require_once 'includes/baseTopSite.inc.php';
 
-<?php
-
-if (isset($_SESSION['user_id']) === true && isset($_SESSION['username']) === true) {
+if (is_authenticated() === true) {
   header('Location: index.php');
 }
 
 if (isset($_POST['submit']) === true) {
   $userContr = new UserController();
-  $results = $userContr->registerUser($_POST['username'], $_POST['password'], $_POST['confirm_password']);
+  $results = $userContr->registerUser();
 
   if ($results['success'] === true) {
     header('Location:login.php');
@@ -27,7 +25,7 @@ if (isset($_POST['submit']) === true) {
     <input type="password" pattern="^\S{8,128}$" placeholder="Potwierdź hasło..." name="confirm_password" onfocus="this.removeAttribute('readonly');" required>
 
     <input type="submit" name="submit" value="Zarejestruj" class="button">
-    <p class="links"><a href="login.php">Logowanie</a></p>
+    <p class="links">Masz już konto? <a href="login.php" class="main">Zaloguj się</a></p>
   </form>
 </div>
 

@@ -230,7 +230,7 @@ form.auth p.links, form.auth h1 {
   margin-bottom: 30px;
 }
 
-form p.links a {
+form p.links, form p.links a {
   font-size: 12px;
 }
 

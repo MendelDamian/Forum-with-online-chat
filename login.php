@@ -1,14 +1,12 @@
-<?php require_once 'includes/baseTopSite.inc.php'; ?>
+<?php require_once 'includes/baseTopSite.inc.php';
 
-<?php
-
-if (isset($_SESSION['user_id']) === true && isset($_SESSION['username']) === true) {
+if (is_authenticated() === true) {
   header('Location: index.php');
 }
 
 if (isset($_POST['submit']) === true) {
   $userContr = new UserController();
-  $results = $userContr->loginUser($_POST['username'], $_POST['password']);
+  $results = $userContr->loginUser();
 
   if ($results['success'] === true) {
     $next_url = isset($_GET['next_url']) ? $_GET['next_url'] : 'index.php';
