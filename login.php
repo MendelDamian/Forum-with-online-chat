@@ -25,7 +25,7 @@ if (isset($_POST['submit']) === true) {
     <input type="password" placeholder="Hasło..." name="password" onfocus="this.removeAttribute('readonly');" required>
 
     <input type="submit" name="submit" value="Zaloguj" class="button">
-    <p class="links"><a href="register.php">Rejestracja</a></p>
+    <p class="links">Nie masz konta? <a href="register.php" class="main">Zarejestruj się</a></p>
   </form>
 </div>
 
