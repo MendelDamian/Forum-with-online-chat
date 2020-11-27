@@ -1,16 +1,21 @@
 <?php require_once 'includes/baseTopSite.inc.php';
 
-if (is_authenticated() === true) {
+if (is_authenticated() === true)
+{
   header('Location: index.php');
 }
 
-if (isset($_POST['submit']) === true) {
+if (isset($_POST['submit']) === true)
+{
   $userContr = new UserController();
   $results = $userContr->registerUser();
 
-  if ($results['success'] === true) {
+  if ($results['success'] === true)
+  {
     header('Location:login.php');
-  } {
+  }
+  else
+  {
     echo '<div class="errorBox">' . $results['ErrorMessage'] . '</div>';
   }
 }

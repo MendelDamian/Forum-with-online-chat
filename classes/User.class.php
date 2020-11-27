@@ -29,5 +29,4 @@ class User extends Database
     $result = $stmt->execute([$username, $password]);
     return $result;
   }
-
 }

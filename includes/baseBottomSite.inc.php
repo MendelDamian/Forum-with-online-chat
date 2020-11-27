@@ -1,5 +1,6 @@
   <?php 
-  if(isset($footer) === false || (isset($footer) === true && $footer !== false)) {
+  if(isset($footer) === false || (isset($footer) === true && $footer !== false))
+  {
     require_once 'includes/parts/footer.part.php'; 
   }
   ?>

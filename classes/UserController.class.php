@@ -6,7 +6,6 @@ class UserController extends User
 {
   public function registerUser()
   {
-
     $return_data = array([
       'success' => false,
       'ErrorMessage' => '',
@@ -66,17 +65,9 @@ class UserController extends User
       'ErrorMessage' => '',
     ]);
 
-    if (validateUsername($_POST['username']) === false)
+    if (validateUsername($_POST['username']) === false || validatePassword($_POST['password']) === false)
     {
-      $return_data['success'] = false;
-      $return_data['ErrorMessage'] = 'Twoja nazwa użytkownika może składać się tylko z małych i dużych liter oraz cyfr. Powinna mieć od 6 do 50 znaków';
-      return $return_data;
-    }
-
-    if (validatePassword($_POST['password']) === false)
-    {
-      $return_data['success'] = false;
-      $return_data['ErrorMessage'] = 'Twoje hasło musi się składać z małych i dużych znaków, cyfr oraz znaków specjalnych. Powinno mieć od 8 do 128 znaków';
+      $return_data['ErrorMessage'] = 'Nieprawidłowa nazwa użytkownika lub hasło';
       return $return_data;
     }
 
@@ -87,14 +78,12 @@ class UserController extends User
 
     if (count($user) == 0 || password_verify($password, $user[0]['password']) === false)
     {
-      $return_data['success'] = false;
       $return_data['ErrorMessage'] = 'Nieprawidłowa nazwa użytkownika lub hasło';
       return $return_data;
     }
 
     $user = $user[0];
     $return_data['success'] = true;
-    $return_data['ErrorMessage'] = '';
 
     session_start();
     $_SESSION['user_id'] = $user['id'];
@@ -112,5 +101,4 @@ class UserController extends User
     $users = $this->getAllUsersOrderByRankAsc();
     return $users;
   }
-  
 }

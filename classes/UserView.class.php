@@ -7,5 +7,4 @@ class UserView extends User
     $result = $this->getUser($username);
     print_r($result);
   }
-
 }
